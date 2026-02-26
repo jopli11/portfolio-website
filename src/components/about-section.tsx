@@ -72,21 +72,15 @@ export function AboutSection() {
             
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                With over <span className="text-primary font-semibold">8 years of professional experience</span>, 
-                I specialize in building scalable web applications and architecting solutions that combine cutting-edge technology 
-                with exceptional user experiences.
+                I&apos;ve been architecting and building digital solutions for over <span className="text-primary font-semibold">8 years</span>, working across agencies, product companies, and enterprise consulting. I&apos;m passionate about creating scalable web platforms that genuinely solve business problems, whether that&apos;s modernising legacy systems or bringing innovative ideas to life.
               </p>
               
               <p>
-                My journey spans from application consulting at enterprise level to co-founding innovative startups. 
-                This diverse experience has given me a unique perspective on both technical implementation 
-                and business strategy, allowing me to deliver solutions that truly drive value.
+                My technical journey spans full-stack development with <span className="text-primary font-semibold">TypeScript/React/Node</span>, enterprise SAP consulting, and solution architecture. I love the challenge of translating complex business requirements into elegant technical solutions that perform well, look great, and deliver real value.
               </p>
               
               <p>
-                I believe in <span className="text-primary font-semibold">systems thinking, collaborative development, and continuous innovation</span>. 
-                Whether I&apos;m architecting enterprise solutions, building mental health platforms, or optimizing complex systems, 
-                I approach every challenge with a focus on scalability, user experience, and meaningful impact.
+                I&apos;ve recently taken the leap into full-time entrepreneurship, focusing entirely on <span className="text-primary font-semibold">QZee LTD & QDev</span>, taking our SaaS platform from concept to funded product while helping other businesses architect their digital solutions. My background includes leading technical discovery at Spindogs and enterprise consulting with clients like Welsh Government and Welsh Water.
               </p>
             </div>
 

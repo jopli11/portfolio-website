@@ -6,34 +6,34 @@ import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 const skillsData = [
   {
-    quote: "Building modern web applications with React, Next.js, and TypeScript for exceptional user experiences.",
-    name: "Frontend Development",
+    quote: "Architecting scalable digital solutions that align with business outcomes and technical excellence.",
+    name: "Solution Architecture",
+    title: "System Design • API Design • Cloud Strategy",
+  },
+  {
+    quote: "Building modern web applications with React, Next.js, and TypeScript for exceptional performance.",
+    name: "Frontend Engineering",
     title: "React • Next.js • TypeScript • Tailwind",
   },
   {
-    quote: "Creating robust server-side solutions with Node.js, Python, and cloud services for scalable applications.",
-    name: "Backend Development", 
-    title: "Node.js • Python • PostgreSQL • AWS",
+    quote: "Creating robust server-side solutions and SaaS platforms with Node.js and scalable databases.",
+    name: "Backend & SaaS", 
+    title: "Node.js • MongoDB • Stripe • Auth",
   },
   {
-    quote: "Designing intuitive and beautiful interfaces that users love, with focus on accessibility and performance.",
-    name: "UI/UX Design",
-    title: "Figma • Adobe XD • Prototyping • Animation",
+    quote: "Leading technical discovery and translating complex business needs into elegant technical solutions.",
+    name: "Technical Leadership",
+    title: "Discovery • Strategy • Mentorship • Delivery",
   },
   {
-    quote: "Implementing CI/CD pipelines, containerization, and cloud infrastructure for reliable deployments.",
-    name: "DevOps & Cloud",
-    title: "Docker • Kubernetes • AWS • Terraform",
+    quote: "Implementing secure infrastructure and automated workflows for high-performance applications.",
+    name: "Cloud & Infrastructure",
+    title: "AWS • Docker • CI/CD • Security",
   },
   {
-    quote: "Building intelligent systems with machine learning algorithms and AI-powered features.",
-    name: "AI & Machine Learning",
-    title: "TensorFlow • PyTorch • OpenAI • Computer Vision",
-  },
-  {
-    quote: "Developing secure blockchain solutions and smart contracts for decentralized applications.",
-    name: "Blockchain",
-    title: "Solidity • Web3.js • Ethereum • DeFi",
+    quote: "Bridging the gap between technical teams and stakeholders in enterprise and startup environments.",
+    name: "Systems Analysis",
+    title: "Business Analysis • Consulting • Requirements",
   },
 ];
 

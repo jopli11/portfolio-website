@@ -7,44 +7,75 @@ import { AnimatedText } from "./ui/animated-text";
 const sampleProjects = [
   {
     title: "QZee - Booking & Growth Software",
-    description: "A comprehensive booking system for service businesses featuring appointment scheduling, payment processing, staff management, client communications, and business growth tools.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe", "Docker", "GraphQL", "AWS", "Auth0"],
+    description: "A comprehensive SaaS booking and operations platform for service-based businesses. Features real-time scheduling, live payments, and automated notifications.",
+    tags: ["React", "Node.js", "MongoDB", "Stripe", "Docker", "GraphQL"],
     liveUrl: "https://www.qzee.app/",
     codeDisabled: true,
     gradient: "bg-gradient-to-br from-purple-600 to-blue-600"
   },
   {
-    title: "OSRS Calculators - Old School RuneScape Tools",
-    description: "A fast, mobile-first OSRS skill calculator with 100% mathematical parity featuring live Grand Exchange prices, efficient training path optimization, player lookup, and comprehensive calculators for all skills including XP calculation.",
-    tags: ["Next.js", "TypeScript", "React", "Chakra UI", "React Query", "Zustand", "Contentful", "Framer Motion"],
+    title: "Probemas Services - OSRS Boosting",
+    description: "A high-conversion service platform for OSRS players. Features real-time Discord integration, loyalty points, and secure payment processing.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Discord API", "Fintech"],
+    liveUrl: "https://probemas-boosting.vercel.app/",
+    githubUrl: "https://github.com/jopli11/probemas-boosting",
+    gradient: "bg-gradient-to-br from-blue-600 to-indigo-600"
+  },
+  {
+    title: "OSRS Calculators",
+    description: "A fast, mobile-first OSRS skill calculator with 100% mathematical parity. Features live Grand Exchange prices and training path optimization.",
+    tags: ["Next.js", "TypeScript", "React Query", "Zustand", "Contentful"],
     liveUrl: "https://www.osrscalculators.com/",
-    codeDisabled: true,
-    gradient: "bg-gradient-to-br from-emerald-600 to-green-600"
+    githubUrl: "https://github.com/jopli11/osrs-skills",
+    gradient: "bg-gradient-to-br from-amber-600 to-yellow-600"
   },
   {
-    title: "Probemas | Raffles - Gaming Raffle Platform",
-    description: "A comprehensive, mobile-first gaming raffle platform featuring provably fair draws, credit-based ticketing, and complete administrative control with cryptographic transparency for all prize drawings.",
-    tags: ["React", "TypeScript", "Vite", "Firebase", "Tailwind CSS", "Emotion/Styled", "Radix UI",],
-    githubUrl: "https://github.com/jopli11/runeraffle",
-    liveDisabled: true,
-    gradient: "bg-gradient-to-br from-amber-600 to-orange-600"
+    title: "Dragon Competitions - Raffle Platform",
+    description: "High-performance raffle web application built for Probemas. Handles secure payments at scale and real-time competition logic.",
+    tags: ["Next.js", "Firebase", "Stripe", "Contentful", "Cloud Functions"],
+    liveUrl: "https://probemas.com/raffles",
+    githubUrl: "https://github.com/jopli11/dragon-competitions",
+    gradient: "bg-gradient-to-br from-red-600 to-orange-600"
   },
   {
-    title: "Setli - Local Service Discovery Platform",
-    description: "A modern, user-friendly web platform designed to help users quickly discover and compare the best local services in their area. Features real-time location-based search, Google Places API integration, powerful filtering by distance and rating, and a responsive mobile-first UI with custom theming.",
-    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Express", "Google Places API", "Axios"],
-    githubUrl: "https://github.com/jopli11/setli",
-    liveDisabled: true,
-    gradient: "bg-gradient-to-br from-slate-600 to-teal-600"
+    title: "Runite - Running Platform",
+    description: "A specialized platform for runners, focusing on performance tracking and community engagement. Built for speed and scalability.",
+    tags: ["Next.js", "TypeScript", "Performance Tracking", "Community", "SaaS"],
+    liveUrl: "https://runite.club/",
+    liveDisabled: false,
+    gradient: "bg-gradient-to-br from-emerald-600 to-teal-600"
+  },
+  {
+    title: "PreStocks Tracker",
+    description: "Real-time live ticker tracker for media stream overlays, providing tokenised access to top pre-IPO companies.",
+    tags: ["Web3", "Real-time Data", "Broadcast Tech", "Fintech"],
+    liveUrl: "https://pre-stocks-tracker.vercel.app/",
+    githubUrl: "https://github.com/jopli11/PreStocks-Tracker",
+    gradient: "bg-gradient-to-br from-blue-500 to-cyan-500"
+  },
+  {
+    title: "Personal Todo App",
+    description: "A specialized todo application featuring nested tasks, daily progress tracking, and carry-over logic for incomplete work.",
+    tags: ["Next.js", "LocalStorage", "Sync", "Productivity"],
+    liveUrl: "https://personal-todo-app-dun.vercel.app/",
+    githubUrl: "https://github.com/jopli11/personal-todo-app",
+    gradient: "bg-gradient-to-br from-indigo-500 to-purple-500"
+  },
+  {
+    title: "Portfolio Website",
+    description: "The very site you're viewing! Built with Next.js 15, React Server Components, and optimized for performance and modern UX.",
+    tags: ["Next.js 15", "RSC", "Framer Motion", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://portfolio-website-sable-iota-93.vercel.app/",
+    githubUrl: "https://github.com/jopli11/portfolio-website",
+    gradient: "bg-gradient-to-br from-slate-700 to-slate-900"
   },
   {
     title: "Aidacura - Mental Health Toolkit",
-    description: "Comprehensive online mental health platform featuring state-of-the-art AI-powered chatbots, tailored resources, mood tracking, and community support within a secure and confidential environment. Empowering individuals to take charge of their mental well-being.",
-    tags: ["Artificial Intelligence", "React", "Node.js", "AI Chatbots", "Mental Health", "Full-Stack Development", "Community Platform"],
+    description: "AI-powered mental health platform featuring state-of-the-art chatbots, tailored resources, and mood tracking. Built with a focus on security and user empowerment.",
+    tags: ["AI Chatbots", "React", "Node.js", "Security", "Mental Health Tech"],
     liveDisabled: true,
     codeDisabled: true,
-    gradient: "bg-gradient-to-br from-gray-500 to-gray-600",
-    isUnavailable: true
+    gradient: "bg-gradient-to-br from-indigo-500 to-purple-500"
   },
 ];
 

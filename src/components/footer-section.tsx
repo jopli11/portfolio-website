@@ -58,9 +58,9 @@ const socialLinks = [
 
 const quickLinks = [
   { name: "QZee Platform", url: "https://www.qzee.app/" },
+  { name: "QDev Agency", url: "https://qdev.uk/" },
   { name: "OSRS Calculators", url: "https://www.osrscalculators.com/" },
-  { name: "GitHub Profile", url: "https://github.com/jopli11" },
-  { name: "Portfolio Source", url: "https://github.com/jopli11/portfolio" }
+  { name: "GitHub Profile", url: "https://github.com/jopli11" }
 ];
 
 export function FooterSection() {

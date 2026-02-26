@@ -1,39 +1,56 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 const experiences = [
   {
-    title: "Solutions Architect",
-    company: "Spindogs",
-    period: "Oct 2023 - Present",
+    title: "Founder & Technical Director",
+    company: "QDev",
+    period: "Sep 2025 - Present",
     location: "Cardiff, Wales, United Kingdom · Hybrid",
-    description: "Leading systems architecture and business analysis initiatives for digital transformation projects. Collaborating with cross-functional teams to design scalable solutions and drive technical strategy.",
+    description: "Setting the strategic direction, technical vision, and delivery standards of QDev. Acting as the primary technical authority for clients, leading discovery and solution design for bespoke software, integrations, and cloud-hosted systems.",
     achievements: [
-      "Architected enterprise-level digital solutions for diverse client portfolios",
-      "Led systems analysis and business consulting for transformation projects",
-      "Designed scalable architectures supporting high-traffic applications",
-      "Mentored development teams on best practices and technical standards",
-      "Delivered comprehensive technical documentation and solution designs"
+      "Leading technical discovery and solution design for diverse client portfolios",
+      "Ensuring all solutions are architecturally sound, secure, and scalable",
+      "Managing delivery quality across bespoke software and cloud systems",
+      "Bridging the gap between commercial leadership and hands-on technical authority",
+      "Architecting platforms for clients like Dragon Competitions and PreStocks"
     ],
-    technologies: ["Systems Architecture", "Business Analysis", "Solution Design", "Enterprise Consulting", "Technical Leadership", "Digital Transformation"],
+    technologies: ["Solution Architecture", "Software Architectural Design", "Technical Leadership", "Cloud Infrastructure", "Bespoke Software", "Strategic Direction"],
     type: "work"
   },
   {
-    title: "Co-Founder & Director",
+    title: "Founding Product Lead",
     company: "QZee",
     period: "Sep 2021 - Present",
     location: "Cardiff, Wales, United Kingdom",
-    description: "Co-founded and direct operations for QZee - Bookings Done Better. Leading technical strategy, business development, and product innovation for our comprehensive booking and growth platform serving service businesses.",
+    description: "Co-founded QZee and led the end-to-end technical delivery of a SaaS booking and operations platform. Owning product architecture and engineering execution, translating customer problems into scalable, commercially viable software.",
     achievements: [
-      "Co-founded successful SaaS platform serving 1000+ service businesses",
-      "Led full-stack development of booking system with real-time features",
-      "Drove business strategy resulting in significant revenue growth",
-      "Built scalable React/Node.js platform with payment integration",
-      "Managed technical team and product roadmap development"
+      "Architected and built core platform: bookings, payments, auth, and notifications",
+      "Taking SaaS platform from concept to funded product",
+      "Leading engineering execution and product strategy across the full stack",
+      "Working directly with customers to shape roadmap and iterate quickly",
+      "Ensuring performance, security, and maintainability of the entire system"
     ],
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Business Strategy", "Product Management", "Team Leadership", "SaaS Development"],
+    technologies: ["Product Strategy", "System Design", "Full-Stack Development", "SaaS Architecture", "Stripe Integration", "Investor Readiness"],
+    type: "work"
+  },
+  {
+    title: "Solutions Architect",
+    company: "Spindogs",
+    period: "Oct 2023 - Sep 2025",
+    location: "Cardiff, Wales, United Kingdom · Hybrid",
+    description: "Designed and validated technical approaches for complex digital projects. Led technical discovery, translated business requirements into system designs, and acted as technical authority across CMS, APIs, and hosting.",
+    achievements: [
+      "Led technical discovery for complex digital projects across multiple clients",
+      "Shaped technical proposals, estimates, and delivery plans for pre-sales",
+      "Advised clients on platform choice, architectural trade-offs, and maintainability",
+      "Acted as technical authority across CMS platforms, APIs, and security",
+      "Collaborated with developers and designers to ensure feasible, scalable solutions"
+    ],
+    technologies: ["Systems Analysis", "Business Analysis", "Solution Architecture", "API Design", "Technical Discovery", "Pre-sales Strategy"],
     type: "work"
   },
   {
@@ -41,15 +58,15 @@ const experiences = [
     company: "Capgemini",
     period: "Nov 2018 - Oct 2023",
     location: "Cardiff, Wales, United Kingdom",
-    description: "Delivered enterprise application consulting services across multiple high-profile projects. Specialized in systems analysis, business consulting, and technical solution delivery for complex enterprise environments.",
+    description: "Delivered systems analysis and application support within large-scale enterprise environments. Supported the full project lifecycle for clients like Welsh Government and Welsh Water in highly regulated settings.",
     achievements: [
-      "Received multiple awards including AMS CMI AWARD (2023, 2020)",
-      "Earned ACCOUNT DEPENDENCY AWARD during COVID-19 (2021)",
-      "Achieved OTACE 4.96 AWARD for exceptional performance (2020)",
-      "Led systems analysis and business consulting for enterprise clients",
-      "Delivered critical applications during high-pressure scenarios"
+      "Bridged the gap between technical teams and non-technical stakeholders",
+      "Operated within highly governed, regulated enterprise environments",
+      "Supported full project lifecycle from requirements to implementation",
+      "Earned multiple awards including AMS CMI and Account Dependency awards",
+      "Built strong foundation in enterprise systems thinking and delivery discipline"
     ],
-    technologies: ["Enterprise Applications", "Systems Analysis", "Business Consulting", "Project Management", "Client Relations", "Technical Consulting"],
+    technologies: ["Enterprise Systems", "Systems Analysis", "Business Consulting", "Stakeholder Management", "Risk-Aware Decision-Making"],
     type: "work"
   },
   {
@@ -110,6 +127,35 @@ const milestones = [
 ];
 
 export function ExperienceSection() {
+  const [contributions, setContributions] = useState<string>("...");
+
+  useEffect(() => {
+    async function fetchGitHubStats() {
+      try {
+        // We use the same username as the GitHub section
+        const username = "jopli11";
+        // Fetch public repos and other basic info to get a "live" feel
+        // Note: Total contributions for a year isn't directly in the basic user API, 
+        // but we can fetch the total public repos as a live proxy or use the 
+        // github-readme-stats logic if we had a backend proxy.
+        // For now, let's fetch the user data to at least get public repo count live.
+        const response = await fetch(`https://api.github.com/users/${username}`);
+        const data = await response.json();
+        
+        if (data.public_repos) {
+          // Since we can't easily get the exact "765" contribution count without a heavy GraphQL call or scraper,
+          // and we want to avoid hardcoding, we'll use the public repo count + a realistic multiplier 
+          // or just show the live repo count. 
+          // Better yet, let's just use the repo count to show it's live.
+          setContributions(data.public_repos.toString());
+        }
+      } catch (error) {
+        console.error("Error fetching GitHub stats:", error);
+      }
+    }
+    fetchGitHubStats();
+  }, []);
+
   return (
     <section className="relative py-20 px-4 bg-background/30">
       <div className="max-w-7xl mx-auto">
@@ -255,8 +301,8 @@ export function ExperienceSection() {
                     <span className="font-semibold text-foreground">8+</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">GitHub Contributions</span>
-                    <span className="font-semibold text-foreground">765</span>
+                    <span className="text-muted-foreground">Public Repositories</span>
+                    <span className="font-semibold text-foreground">{contributions}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Enterprise Projects</span>
@@ -274,4 +320,4 @@ export function ExperienceSection() {
       </div>
     </section>
   );
-} 
+}

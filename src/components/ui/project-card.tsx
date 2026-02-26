@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 
@@ -27,34 +28,65 @@ export function ProjectCard({
   gradient,
   isUnavailable = false
 }: ProjectCardProps) {
+  const [showPreview, setShowPreview] = useState(false);
+
   return (
     <div className={cn(
-      "group relative hover:-translate-y-2 transition-transform duration-300",
+      "group relative h-[550px] transition-all duration-500",
       isUnavailable && "opacity-60 grayscale"
     )}>
       <div className={cn(
-        "relative overflow-hidden rounded-2xl bg-card border border-border/50 backdrop-blur-sm shadow-lg",
+        "relative flex flex-col h-full overflow-hidden rounded-2xl bg-card border border-border/50 backdrop-blur-sm shadow-lg transition-all duration-500 group-hover:shadow-primary/20 group-hover:border-primary/30",
         isUnavailable && "bg-card/30 border-border/30"
       )}>
         {/* Background Gradient */}
         <div className={cn(
-          "absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none",
+          "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none",
           gradient,
-          isUnavailable && "opacity-0 group-hover:opacity-10"
+          isUnavailable && "opacity-0 group-hover:opacity-5"
         )} />
         
+        {/* Preview Overlay */}
+        <AnimatePresence>
+          {showPreview && liveUrl && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="absolute inset-0 z-30 bg-background"
+            >
+              <div className="absolute top-4 right-4 z-40">
+                <Button 
+                  size="sm" 
+                  variant="secondary" 
+                  onClick={() => setShowPreview(false)}
+                  className="rounded-full h-8 w-8 p-0 shadow-lg"
+                >
+                  ✕
+                </Button>
+              </div>
+              <iframe 
+                src={liveUrl} 
+                className="w-full h-full border-0"
+                title={`Preview of ${title}`}
+                loading="lazy"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Content */}
-        <div className="relative p-6 space-y-4 pointer-events-auto">
+        <div className="relative flex flex-col h-full p-6 space-y-4 pointer-events-auto">
           {/* Header */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             <h3 className={cn(
-              "text-2xl font-bold gradient-text",
+              "text-2xl font-bold gradient-text min-h-[4rem] flex items-center leading-tight",
               isUnavailable && "text-muted-foreground"
             )}>
               {title}
             </h3>
             <p className={cn(
-              "text-muted-foreground leading-relaxed",
+              "text-muted-foreground leading-relaxed line-clamp-4 min-h-[6rem] text-sm md:text-base",
               isUnavailable && "text-muted-foreground/60"
             )}>
               {description}
@@ -62,15 +94,15 @@ export function ProjectCard({
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag, index) => (
+          <div className="flex flex-wrap gap-2 content-start min-h-[6rem]">
+            {tags.slice(0, 8).map((tag, index) => (
               <motion.span
                 key={tag}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 className={cn(
-                  "px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20",
+                  "px-3 py-1 text-[10px] uppercase tracking-wider font-semibold bg-primary/5 text-primary rounded-full border border-primary/10",
                   isUnavailable && "bg-muted/20 text-muted-foreground border-muted/30"
                 )}
               >
@@ -80,54 +112,67 @@ export function ProjectCard({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-3 pt-4">
-            {(liveUrl || liveDisabled) && (
-              <>
-                {!liveDisabled && liveUrl && !isUnavailable ? (
-                  <Button
-                    size="sm"
-                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 border-0 transition-all hover:scale-105"
-                    asChild
-                  >
-                    <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+          <div className="flex flex-col gap-3 pt-4 mt-auto">
+            <div className="flex gap-3">
+              {(liveUrl || liveDisabled) && (
+                <>
+                  {!liveDisabled && liveUrl && !isUnavailable ? (
+                    <>
+                      <Button
+                        size="sm"
+                        className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 border-0 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                        onClick={() => setShowPreview(true)}
+                      >
+                        👁️ Preview
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="flex-1 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all"
+                        asChild
+                      >
+                        <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                          🚀 Visit
+                        </a>
+                      </Button>
+                    </>
+                  ) : (
+                    <Button
+                      size="sm"
+                      disabled
+                      className="flex-1 opacity-50 cursor-not-allowed bg-muted text-muted-foreground border-muted"
+                    >
                       🚀 Live Demo
-                    </a>
-                  </Button>
-                ) : (
-                  <Button
-                    size="sm"
-                    disabled
-                    className="opacity-50 cursor-not-allowed bg-muted text-muted-foreground border-muted"
-                  >
-                    🚀 Live Demo
-                  </Button>
-                )}
-              </>
-            )}
+                    </Button>
+                  )}
+                </>
+              )}
+            </div>
+            
             {(githubUrl || codeDisabled) && (
-              <>
+              <div className="w-full">
                 {!codeDisabled && githubUrl && !isUnavailable ? (
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     size="sm"
-                    className="border-primary/30 hover:border-primary/60 hover:bg-primary/10 transition-all hover:scale-105"
+                    className="w-full text-xs text-muted-foreground hover:text-primary transition-all"
                     asChild
                   >
                     <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                      📱 Code
+                      📱 View Codebase
                     </a>
                   </Button>
                 ) : (
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     size="sm"
                     disabled
-                    className="opacity-50 cursor-not-allowed bg-muted text-muted-foreground border-muted"
+                    className="w-full text-xs opacity-50 cursor-not-allowed text-muted-foreground"
                   >
-                    📱 Code
+                    🔒 Private Repository
                   </Button>
                 )}
-              </>
+              </div>
             )}
           </div>
         </div>
@@ -137,9 +182,9 @@ export function ProjectCard({
           "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
           isUnavailable && "opacity-0 group-hover:opacity-30"
         )}>
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-blue-600/10 to-pink-600/10 blur-xl" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary/10 to-transparent blur-2xl" />
         </div>
       </div>
     </div>
   );
-} 
+}
