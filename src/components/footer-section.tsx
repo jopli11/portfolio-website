@@ -103,7 +103,7 @@ export function FooterSection() {
               ))}
             </div>
 
-            <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg p-4 border border-primary/20">
+            <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-lg p-4 border border-primary/20">
               <p className="text-sm text-muted-foreground">
                 💼 Available for freelance projects and full-time opportunities
               </p>

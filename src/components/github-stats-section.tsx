@@ -192,7 +192,7 @@ export function GitHubStatsSection() {
               icon: <CalendarIcon />, 
               label: "Total Commits", 
               value: "71",
-              color: "from-purple-500 to-purple-600"
+              color: "from-emerald-500 to-cyan-600"
             },
             { 
               icon: <StarIcon />, 
@@ -240,10 +240,10 @@ export function GitHubStatsSection() {
                <picture>
                  <source 
                    media="(prefers-color-scheme: dark)" 
-                   srcSet={`https://github-readme-stats.vercel.app/api?username=jopli11&show_icons=true&theme=dark&hide_border=true&bg_color=00000000&text_color=888888&icon_color=6366f1&title_color=6366f1`}
+                   srcSet={`https://github-readme-stats.vercel.app/api?username=jopli11&show_icons=true&theme=dark&hide_border=true&bg_color=00000000&text_color=888888&icon_color=059669&title_color=059669`}
                  />
                  <img
-                   src={`https://github-readme-stats.vercel.app/api?username=jopli11&show_icons=true&theme=light&hide_border=true&bg_color=00000000&text_color=333333&icon_color=6366f1&title_color=6366f1`}
+                   src={`https://github-readme-stats.vercel.app/api?username=jopli11&show_icons=true&theme=light&hide_border=true&bg_color=00000000&text_color=333333&icon_color=059669&title_color=059669`}
                    alt="GitHub Stats"
                    className="w-full h-auto rounded-lg"
                    loading="lazy"
@@ -260,10 +260,10 @@ export function GitHubStatsSection() {
                <picture>
                  <source 
                    media="(prefers-color-scheme: dark)" 
-                   srcSet={`https://github-readme-activity-graph.vercel.app/graph?username=jopli11&theme=react-dark&hide_border=true&bg_color=00000000&color=6366f1&line=6366f1&point=ffffff`}
+                   srcSet={`https://github-readme-activity-graph.vercel.app/graph?username=jopli11&theme=react-dark&hide_border=true&bg_color=00000000&color=059669&line=059669&point=ffffff`}
                  />
                  <img
-                   src={`https://github-readme-activity-graph.vercel.app/graph?username=jopli11&theme=minimal&hide_border=true&bg_color=00000000&color=6366f1&line=6366f1&point=333333`}
+                   src={`https://github-readme-activity-graph.vercel.app/graph?username=jopli11&theme=minimal&hide_border=true&bg_color=00000000&color=059669&line=059669&point=333333`}
                    alt="GitHub Activity Graph"
                    className="w-full h-auto rounded-lg"
                    loading="lazy"
@@ -280,10 +280,10 @@ export function GitHubStatsSection() {
                  <picture>
                    <source 
                      media="(prefers-color-scheme: dark)" 
-                     srcSet={`https://github-readme-streak-stats.herokuapp.com/?user=jopli11&theme=dark&hide_border=true&background=00000000&ring=6366f1&fire=6366f1&currStreakLabel=888888&sideLabels=888888&dates=888888&currStreakNum=ffffff&sideNums=ffffff`}
+                     srcSet={`https://github-readme-streak-stats.herokuapp.com/?user=jopli11&theme=dark&hide_border=true&background=00000000&ring=059669&fire=059669&currStreakLabel=888888&sideLabels=888888&dates=888888&currStreakNum=ffffff&sideNums=ffffff`}
                    />
                    <img
-                     src={`https://github-readme-streak-stats.herokuapp.com/?user=jopli11&theme=light&hide_border=true&background=00000000&ring=6366f1&fire=6366f1&currStreakLabel=1a1a1a&sideLabels=1a1a1a&dates=1a1a1a&currStreakNum=000000&sideNums=000000`}
+                     src={`https://github-readme-streak-stats.herokuapp.com/?user=jopli11&theme=light&hide_border=true&background=00000000&ring=059669&fire=059669&currStreakLabel=1a1a1a&sideLabels=1a1a1a&dates=1a1a1a&currStreakNum=000000&sideNums=000000`}
                      alt="GitHub Streak Stats"
                      className="w-full h-auto rounded-lg"
                      loading="lazy"
@@ -349,10 +349,10 @@ export function GitHubStatsSection() {
                  <picture>
                    <source 
                      media="(prefers-color-scheme: dark)" 
-                     srcSet={`https://github-readme-stats.vercel.app/api/top-langs/?username=jopli11&layout=compact&theme=dark&hide_border=true&bg_color=00000000&text_color=888888&title_color=6366f1`}
+                     srcSet={`https://github-readme-stats.vercel.app/api/top-langs/?username=jopli11&layout=compact&theme=dark&hide_border=true&bg_color=00000000&text_color=888888&title_color=059669`}
                    />
                    <img
-                     src={`https://github-readme-stats.vercel.app/api/top-langs/?username=jopli11&layout=compact&theme=light&hide_border=true&bg_color=00000000&text_color=333333&title_color=6366f1`}
+                     src={`https://github-readme-stats.vercel.app/api/top-langs/?username=jopli11&layout=compact&theme=light&hide_border=true&bg_color=00000000&text_color=333333&title_color=059669`}
                      alt="Top Languages"
                      className="w-full h-auto rounded-lg"
                      loading="lazy"
@@ -421,7 +421,7 @@ export function GitHubStatsSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300"
                 >
                   View All Repositories →
                 </motion.a>
@@ -438,7 +438,7 @@ export function GitHubStatsSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-8 border border-primary/20">
+          <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl p-8 border border-primary/20">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Want to Collaborate?
             </h3>
@@ -464,7 +464,7 @@ export function GitHubStatsSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
               >
                 Get In Touch
               </motion.button>

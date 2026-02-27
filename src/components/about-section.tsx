@@ -91,7 +91,7 @@ export function AboutSection() {
             >
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Let&apos;s Work Together
@@ -165,7 +165,7 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-8 border border-primary/20">
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl p-8 border border-primary/20">
             <h4 className="text-2xl font-bold text-foreground mb-4">My Development Philosophy</h4>
             <p className="text-lg text-muted-foreground leading-relaxed">
               &quot;Great software isn&apos;t just about writing code—it&apos;s about solving real problems, 

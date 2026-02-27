@@ -44,7 +44,7 @@ export default function Home() {
         {/* Background Effects */}
         <BackgroundGrid />
         <BackgroundBeams />
-        <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
+          <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="hsl(var(--primary))" />
         <Meteors number={13} />
         
         {/* Top Navigation with Theme Toggle */}
@@ -55,11 +55,11 @@ export default function Home() {
           className="relative z-50 flex items-center justify-between p-6 md:p-8"
         >
           <motion.div 
-            className="text-2xl font-bold gradient-text"
+            className="text-2xl font-black tracking-tighter gradient-text"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            joel.dev
+            JOEL.DEV
           </motion.div>
           <ThemeToggle />
         </motion.div>
@@ -73,23 +73,38 @@ export default function Home() {
             
             {/* Main Heading */}
             <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="space-y-4"
+              className="space-y-0"
             >
-              <AnimatedText
-                text="Building the Future"
-                className="text-5xl md:text-7xl lg:text-8xl font-bold gradient-text"
-                delay={0.2}
+              <div className="overflow-hidden">
+                <AnimatedText
+                  text="BUILDING THE"
+                  className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-[calc(-0.05em)] leading-[0.85] text-foreground inline-block"
+                  delay={0.2}
+                />
+              </div>
+              <div className="overflow-hidden">
+                <AnimatedText
+                  text="FUTURE"
+                  className="text-6xl md:text-8xl lg:text-[12rem] font-black tracking-[calc(-0.07em)] leading-[0.8] gradient-text inline-block"
+                  delay={0.5}
+                />
+              </div>
+              <motion.div
+                initial={{ width: 0, opacity: 0 }}
+                animate={{ width: "100%", opacity: 1 }}
+                transition={{ delay: 1.2, duration: 1, ease: "circOut" }}
+                className="h-2 md:h-4 bg-primary mt-4 mb-8"
               />
               <motion.h2
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.8 }}
-                className="text-3xl md:text-5xl lg:text-6xl font-bold text-muted-foreground"
+                className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight text-muted-foreground pt-4"
               >
-                One Line of Code at a Time
+                ONE LINE OF CODE AT A TIME
               </motion.h2>
             </motion.div>
 
@@ -119,7 +134,7 @@ export default function Home() {
               >
                 <Button 
                   size="lg" 
-                  className="text-lg px-8 py-6 glow-purple bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 border-0"
+                  className="text-lg px-8 py-6 glow-emerald bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 border-0"
                 >
                   <a href="#projects">🚀 View My Projects</a>
                 </Button>

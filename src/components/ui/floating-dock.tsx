@@ -65,7 +65,7 @@ const FloatingDockDesktop = ({
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
         "mx-auto hidden md:flex h-16 gap-6 items-end rounded-2xl bg-background/80 dark:bg-background/60 backdrop-blur-md border border-border/50 shadow-xl px-6 pb-3",
-        "before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r before:from-purple-500/10 before:via-blue-500/10 before:to-pink-500/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500",
+        "before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r before:from-emerald-500/10 before:via-cyan-500/10 before:to-blue-500/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500",
         "relative",
         className
       )}
@@ -158,7 +158,7 @@ function IconContainer({
         
         {/* Hover glow effect */}
         <motion.div
-          className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-pink-500/20 opacity-0"
+          className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-blue-500/20 opacity-0"
           animate={{
             opacity: hovered ? 1 : 0,
           }}

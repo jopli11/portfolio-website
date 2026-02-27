@@ -101,7 +101,7 @@ export function TestimonialsSection() {
 
               {/* Client Info */}
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center text-white font-semibold text-lg">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-600 to-cyan-600 flex items-center justify-center text-white font-semibold text-lg">
                   {testimonial.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <div>
@@ -122,7 +122,7 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-8 border border-primary/20">
+          <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl p-8 border border-primary/20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
@@ -163,7 +163,7 @@ export function TestimonialsSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Start Your Project
           </motion.button>

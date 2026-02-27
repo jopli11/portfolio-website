@@ -1,72 +1,81 @@
 @import "tailwindcss";
 :root {
-    /* Light theme - Modern and vibrant */
-    --background: 0 0% 100%;
+    /* Light theme - Neo-Brutalist / High-Contrast Modern */
+    --background: 45 100% 98%; /* Off-white / Cream */
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 262 83% 58%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
+    --primary: 158 94% 30%; /* Deep Emerald */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 100% 50%; /* Vibrant Orange */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 45 20% 90%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --accent: 190 100% 40%; /* Electric Blue */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 262 83% 58%;
-    --radius: 0.75rem;
-    /* Special gradient colors */
-    --gradient-from: 262 83% 58%;
-    --gradient-to: 310 83% 68%;
-    --accent-purple: 262 83% 58%;
-    --accent-pink: 310 83% 68%;
-    --accent-blue: 230 83% 58%;
+    --border: 240 10% 3.9%; /* Sharp black borders */
+    --input: 240 10% 3.9%;
+    --ring: 158 94% 30%;
+    --radius: 0px; /* Sharp corners for stylized look */
+    
+    /* Custom Branding Gradients */
+    --gradient-from: 158 94% 30%;
+    --gradient-to: 190 100% 40%;
+    --accent-emerald: 158 94% 30%;
+    --accent-orange: 35 100% 50%;
+    --accent-blue: 190 100% 40%;
 }
 
 .dark {
-    /* Dark theme - Cyberpunk inspired */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Dark theme - Deep Forest / Midnight Cyber */
+    --background: 160 50% 4%; /* Very deep green-black */
+    --foreground: 158 20% 98%;
+    --card: 160 50% 6%;
+    --card-foreground: 158 20% 98%;
+    --popover: 160 50% 4%;
+    --popover-foreground: 158 20% 98%;
+    --primary: 158 94% 45%; /* Brighter Emerald */
+    --primary-foreground: 160 50% 4%;
+    --secondary: 35 100% 60%; /* Brighter Orange */
+    --secondary-foreground: 160 50% 4%;
+    --muted: 160 30% 15%;
+    --muted-foreground: 160 10% 65%;
+    --accent: 190 100% 50%; /* Brighter Electric Blue */
+    --accent-foreground: 160 50% 4%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
-    /* Special dark theme gradients */
-    --gradient-from: 217.2 91.2% 59.8%;
-    --gradient-to: 280 91% 69%;
-    --accent-purple: 262 83% 68%;
-    --accent-pink: 310 83% 78%;
-    --accent-blue: 217.2 91.2% 59.8%;
+    --destructive-foreground: 158 20% 98%;
+    --border: 158 94% 45% / 0.2;
+    --input: 160 30% 15%;
+    --ring: 158 94% 45%;
+    
+    /* Custom Dark Gradients */
+    --gradient-from: 158 94% 45%;
+    --gradient-to: 190 100% 50%;
+    --accent-emerald: 158 94% 45%;
+    --accent-orange: 35 100% 60%;
+    --accent-blue: 190 100% 50%;
 }
 
 * {
     border-color: hsl(var(--border));
 }
 
-body {
+    body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-family: var(--font-inter), Arial, Helvetica, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-syne), sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
 }
 
 
@@ -102,16 +111,16 @@ body {
 
 /* Glow effects */
 
-.glow-purple {
-    box-shadow: 0 0 20px hsl(var(--accent-purple) / 0.3);
+.glow-emerald {
+    box-shadow: 0 0 20px hsl(var(--accent-emerald) / 0.3);
+}
+
+.glow-orange {
+    box-shadow: 0 0 20px hsl(var(--accent-orange) / 0.3);
 }
 
 .glow-blue {
     box-shadow: 0 0 20px hsl(var(--accent-blue) / 0.3);
-}
-
-.glow-pink {
-    box-shadow: 0 0 20px hsl(var(--accent-pink) / 0.3);
 }
 
 

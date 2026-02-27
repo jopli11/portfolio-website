@@ -120,7 +120,7 @@ export function ProjectCard({
                     <>
                       <Button
                         size="sm"
-                        className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 border-0 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                        className="flex-1 bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 border-0 transition-all hover:scale-[1.02] active:scale-[0.98]"
                         onClick={() => setShowPreview(true)}
                       >
                         👁️ Preview

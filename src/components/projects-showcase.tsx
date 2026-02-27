@@ -11,7 +11,7 @@ const sampleProjects = [
     tags: ["React", "Node.js", "MongoDB", "Stripe", "Docker", "GraphQL"],
     liveUrl: "https://www.qzee.app/",
     codeDisabled: true,
-    gradient: "bg-gradient-to-br from-purple-600 to-blue-600"
+    gradient: "bg-gradient-to-br from-emerald-600 to-cyan-600"
   },
   {
     title: "Probemas Services - OSRS Boosting",
@@ -19,7 +19,7 @@ const sampleProjects = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Discord API", "Fintech"],
     liveUrl: "https://probemas-boosting.vercel.app/",
     githubUrl: "https://github.com/jopli11/probemas-boosting",
-    gradient: "bg-gradient-to-br from-blue-600 to-indigo-600"
+    gradient: "bg-gradient-to-br from-cyan-600 to-blue-600"
   },
   {
     title: "OSRS Calculators",
@@ -59,7 +59,7 @@ const sampleProjects = [
     tags: ["Next.js", "LocalStorage", "Sync", "Productivity"],
     liveUrl: "https://personal-todo-app-dun.vercel.app/",
     githubUrl: "https://github.com/jopli11/personal-todo-app",
-    gradient: "bg-gradient-to-br from-indigo-500 to-purple-500"
+    gradient: "bg-gradient-to-br from-cyan-500 to-emerald-500"
   },
   {
     title: "Portfolio Website",
@@ -75,7 +75,7 @@ const sampleProjects = [
     tags: ["AI Chatbots", "React", "Node.js", "Security", "Mental Health Tech"],
     liveDisabled: true,
     codeDisabled: true,
-    gradient: "bg-gradient-to-br from-indigo-500 to-purple-500"
+    gradient: "bg-gradient-to-br from-cyan-500 to-blue-500"
   },
 ];
 
@@ -151,7 +151,10 @@ export function ProjectsShowcase() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl glow-purple">
+            <button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-semibold rounded-full hover:from-emerald-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl glow-emerald"
+            >
               💬 Start a Conversation
             </button>
           </motion.div>

@@ -123,7 +123,7 @@ export function ContactSection() {
               </div>
 
               {/* Quick Response Info */}
-              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-primary/20 mt-8">
+              <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-xl p-6 border border-primary/20 mt-8">
                 <h4 className="text-lg font-semibold text-foreground mb-2">Quick Response</h4>
                 <p className="text-muted-foreground">
                   I typically respond to emails within 24 hours. For urgent projects, 
@@ -217,7 +217,7 @@ export function ContactSection() {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>

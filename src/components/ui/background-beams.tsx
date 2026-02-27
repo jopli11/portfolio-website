@@ -52,9 +52,9 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
               y2="344"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#18CCFC" stopOpacity="0" />
-              <stop offset="0.325" stopColor="#18CCFC" />
-              <stop offset="1" stopColor="#6344F5" stopOpacity="0" />
+              <stop stopColor="hsl(var(--primary))" stopOpacity="0" />
+              <stop offset="0.325" stopColor="hsl(var(--primary))" />
+              <stop offset="1" stopColor="hsl(var(--accent))" stopOpacity="0" />
             </linearGradient>
           ))}
         </defs>

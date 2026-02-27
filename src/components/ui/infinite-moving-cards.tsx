@@ -56,7 +56,7 @@ export const InfiniteMovingCards = ({
         {/* First set of items */}
         {items.map((item, idx) => (
           <div
-            className="w-[350px] max-w-full relative rounded-2xl border border-border/50 flex-shrink-0 px-8 py-6 md:w-[450px] bg-card/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300"
+            className="w-[350px] max-w-full relative rounded-none border border-border/50 flex-shrink-0 px-8 py-6 md:w-[450px] bg-card/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300"
             key={`first-${item.name}-${idx}`}
           >
             <blockquote>
@@ -80,10 +80,10 @@ export const InfiniteMovingCards = ({
             </blockquote>
           </div>
         ))}
-        {/* Duplicate set for seamless loop */}
+          {/* Duplicate set for seamless loop */}
         {items.map((item, idx) => (
           <div
-            className="w-[350px] max-w-full relative rounded-2xl border border-border/50 flex-shrink-0 px-8 py-6 md:w-[450px] bg-card/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300"
+            className="w-[350px] max-w-full relative rounded-none border border-border/50 flex-shrink-0 px-8 py-6 md:w-[450px] bg-card/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300"
             key={`second-${item.name}-${idx}`}
           >
             <blockquote>

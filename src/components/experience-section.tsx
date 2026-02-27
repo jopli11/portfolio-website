@@ -182,7 +182,7 @@ export function ExperienceSection() {
           <div className="lg:col-span-2">
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500 to-cyan-500"></div>
               
               {/* Experience Items */}
               <div className="space-y-12">
@@ -198,7 +198,7 @@ export function ExperienceSection() {
                     {/* Timeline Dot */}
                     <div className={`relative z-10 flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center ${
                       exp.type === 'work' 
-                        ? 'bg-gradient-to-r from-purple-600 to-blue-600' 
+                        ? 'bg-gradient-to-r from-emerald-600 to-cyan-600' 
                         : 'bg-gradient-to-r from-green-600 to-teal-600'
                     }`}>
                       {exp.type === 'work' ? (
@@ -293,7 +293,7 @@ export function ExperienceSection() {
               </div>
 
               {/* Quick Stats */}
-              <div className="mt-8 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-primary/20">
+              <div className="mt-8 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-semibold text-foreground mb-4">Quick Stats</h4>
                 <div className="space-y-3">
                   <div className="flex justify-between">
