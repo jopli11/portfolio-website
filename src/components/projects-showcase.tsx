@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ProjectCard } from "./ui/project-card";
 import { AnimatedText } from "./ui/animated-text";
+import { MagneticButton } from "./ui/magnetic-button";
 
 const sampleProjects = [
   {
@@ -147,17 +148,26 @@ export function ProjectsShowcase() {
           >
             Interested in working together? Let&apos;s create something amazing!
           </motion.p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-semibold rounded-full hover:from-emerald-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl glow-emerald"
+          <MagneticButton>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              💬 Start a Conversation
-            </button>
-          </motion.div>
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.hash = 'contact';
+                  }
+                }}
+                className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-semibold rounded-full hover:from-emerald-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl glow-emerald"
+              >
+                💬 Start a Conversation
+              </button>
+            </motion.div>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>

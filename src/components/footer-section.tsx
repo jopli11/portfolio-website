@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MagneticButton } from "./ui/magnetic-button";
 
 // Icon components
 const GitHubIcon = () => (
@@ -88,18 +89,19 @@ export function FooterSection() {
             
             <div className="flex gap-4 mb-6">
               {socialLinks.map((social) => (
-                <motion.a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`p-2 rounded-lg bg-card/50 border border-border/30 text-muted-foreground transition-colors ${social.color}`}
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </motion.a>
+                <MagneticButton key={social.name}>
+                  <motion.a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`p-2 rounded-lg bg-card/50 border border-border/30 text-muted-foreground transition-colors ${social.color} block`}
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </motion.a>
+                </MagneticButton>
               ))}
             </div>
 

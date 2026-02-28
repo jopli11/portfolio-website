@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
+import { MagneticButton } from "./ui/magnetic-button";
 
 const skillsData = [
   {
@@ -97,14 +98,26 @@ export function SkillsShowcase() {
           >
             Ready to leverage these technologies for your next project?
           </motion.p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <button className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-semibold rounded-full hover:from-emerald-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl glow-emerald">
-              🚀 Let&apos;s Build Something Amazing
-            </button>
-          </motion.div>
+          <MagneticButton>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.hash = 'contact';
+                  }
+                }}
+                className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-semibold rounded-full hover:from-emerald-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl glow-emerald"
+              >
+                🚀 Let&apos;s Build Something Amazing
+              </button>
+            </motion.div>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>

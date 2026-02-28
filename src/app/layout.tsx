@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
+import { CustomCursor } from "@/components/ui/custom-cursor";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -42,9 +45,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <div className="relative flex min-h-screen flex-col">
-        {children}
-          </div>
+          <SmoothScrollProvider>
+            <ScrollProgress />
+            <CustomCursor />
+            <div className="relative flex min-h-screen flex-col">
+              {children}
+            </div>
+          </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>

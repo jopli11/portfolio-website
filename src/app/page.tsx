@@ -9,6 +9,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { ClientNavigation } from "@/components/client-navigation";
 import { HeroTechIcons } from "@/components/hero-tech-icons";
 import * as motion from "framer-motion/client";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 
 // Dynamic imports for sections below the fold
 const AboutSection = dynamic(() => import("@/components/about-section").then(mod => mod.AboutSection), {
@@ -115,7 +116,7 @@ export default function Home() {
               transition={{ delay: 2, duration: 0.8 }}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              Technical Director & Solutions Architect building{" "}
+              Full Stack Developer & Solutions Architect building{" "}
               <span className="text-primary font-semibold">scalable digital infrastructure</span>
               {" "}and innovative SaaS platforms that solve real business problems.
             </motion.p>
@@ -127,32 +128,36 @@ export default function Home() {
               transition={{ delay: 2.5, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
             >
-              <motion.div
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px hsl(var(--primary) / 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <Button 
-                  size="lg" 
-                  className="text-lg px-8 py-6 glow-emerald bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 border-0"
+              <MagneticButton>
+                <motion.div
+                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px hsl(var(--primary) / 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <a href="#projects">🚀 View My Projects</a>
-                </Button>
-              </motion.div>
+                  <Button 
+                    size="lg" 
+                    className="text-lg px-8 py-6 glow-emerald bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 border-0"
+                  >
+                    <a href="#projects">🚀 View My Projects</a>
+                  </Button>
+                </motion.div>
+              </MagneticButton>
               
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="text-lg px-8 py-6 border-2 border-primary/30 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/60"
+              <MagneticButton>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <a href="#contact">💬 Let&apos;s Talk</a>
-                </Button>
-              </motion.div>
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="text-lg px-8 py-6 border-2 border-primary/30 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/60"
+                  >
+                    <a href="#contact">💬 Let&apos;s Talk</a>
+                  </Button>
+                </motion.div>
+              </MagneticButton>
             </motion.div>
 
             {/* Floating Tech Icons - Client Component */}

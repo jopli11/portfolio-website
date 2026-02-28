@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence, MotionValue } from "framer-motion";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export const FloatingDock = ({
   items,
@@ -89,9 +89,28 @@ function IconContainer({
   href: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const boundsRef = useRef({ x: 0, width: 0 });
+
+  useEffect(() => {
+    const updateBounds = () => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        boundsRef.current = { x: rect.x, width: rect.width };
+      }
+    };
+
+    updateBounds();
+    window.addEventListener("resize", updateBounds);
+    window.addEventListener("scroll", updateBounds);
+
+    return () => {
+      window.removeEventListener("resize", updateBounds);
+      window.removeEventListener("scroll", updateBounds);
+    };
+  }, []);
 
   const distance = useTransform(mouseX, (val) => {
-    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+    const bounds = boundsRef.current;
     return val - bounds.x - bounds.width / 2;
   });
 
@@ -102,25 +121,25 @@ function IconContainer({
   const heightTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
 
   const width = useSpring(widthTransform, {
-    mass: 0.1,
-    stiffness: 400,
-    damping: 20,
+    mass: 0.05,
+    stiffness: 600,
+    damping: 15,
   });
   const height = useSpring(heightTransform, {
-    mass: 0.1,
-    stiffness: 400,
-    damping: 20,
+    mass: 0.05,
+    stiffness: 600,
+    damping: 15,
   });
 
   const widthIcon = useSpring(widthTransformIcon, {
-    mass: 0.1,
-    stiffness: 400,
-    damping: 20,
+    mass: 0.05,
+    stiffness: 600,
+    damping: 15,
   });
   const heightIcon = useSpring(heightTransformIcon, {
-    mass: 0.1,
-    stiffness: 400,
-    damping: 20,
+    mass: 0.05,
+    stiffness: 600,
+    damping: 15,
   });
 
   const [hovered, setHovered] = useState(false);
@@ -132,23 +151,22 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="aspect-square rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 flex items-center justify-center relative text-primary hover:text-primary transition-all duration-300"
+        className="aspect-square rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 flex items-center justify-center relative text-primary hover:text-primary transition-all duration-300 will-change-transform"
         whileHover={{ 
           boxShadow: "0 10px 30px hsl(var(--primary) / 0.3)"
         }}
       >
-        <AnimatePresence>
-          {hovered && (
-            <motion.div
-              initial={{ opacity: 0, y: 10, x: "-50%" }}
-              animate={{ opacity: 1, y: 0, x: "-50%" }}
-              exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="px-3 py-1.5 whitespace-pre rounded-lg bg-background/90 border border-border shadow-lg backdrop-blur-sm text-foreground absolute left-1/2 -translate-x-1/2 -top-12 w-fit text-sm font-medium"
-            >
-              {title}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0, y: 10, x: "-50%" }}
+          animate={{ 
+            opacity: hovered ? 1 : 0, 
+            y: hovered ? 0 : 2,
+            x: "-50%" 
+          }}
+          className="px-3 py-1.5 whitespace-pre rounded-lg bg-background/90 border border-border shadow-lg backdrop-blur-sm text-foreground absolute left-1/2 -translate-x-1/2 -top-12 w-fit text-sm font-medium pointer-events-none"
+        >
+          {title}
+        </motion.div>
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
           className="flex items-center justify-center"

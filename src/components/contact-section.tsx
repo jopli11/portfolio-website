@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { Button } from "./ui/button";
+import { MagneticButton } from "./ui/magnetic-button";
 
 interface FormData {
   name: string;
@@ -209,19 +210,21 @@ export function ContactSection() {
                 />
               </div>
 
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              <MagneticButton>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </motion.div>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </motion.div>
+              </MagneticButton>
 
               {/* Status Messages */}
               {submitStatus === "success" && (

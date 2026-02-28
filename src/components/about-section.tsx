@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { Button } from "./ui/button";
+import { MagneticButton } from "./ui/magnetic-button";
 
 const techStack = [
   { name: "React", category: "Frontend", experience: "8+ years" },
@@ -84,19 +85,21 @@ export function AboutSection() {
               </p>
             </div>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="pt-6"
-            >
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <MagneticButton>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="pt-6"
               >
-                Let&apos;s Work Together
-              </Button>
-            </motion.div>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Let&apos;s Work Together
+                </Button>
+              </motion.div>
+            </MagneticButton>
           </motion.div>
 
           {/* Right Column - Tech Stack & Achievements */}
