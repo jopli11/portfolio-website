@@ -11,7 +11,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { ClientNavigation } from "@/components/client-navigation";
 import { HeroTechIcons } from "@/components/hero-tech-icons";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
 // Dynamic imports for sections below the fold
@@ -42,8 +42,14 @@ const FooterSection = dynamic(() => import("@/components/footer-section").then(m
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: mounted ? containerRef : undefined,
     offset: ["start start", "end end"]
   });
 
@@ -51,20 +57,19 @@ export default function Home() {
   const backgroundOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0.3]);
   const smoothBackgroundY = useSpring(backgroundY, { stiffness: 100, damping: 30 });
 
+  if (!mounted) return null;
+
   return (
     <main ref={containerRef} className="relative">
-      {/* Hero Section - Keep as much as possible static or use framer-motion/client */}
+      {/* Background Effects - Global and persistent */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <BackgroundGrid />
+      </div>
+
+      {/* Hero Section */}
       <div className="relative min-h-screen animated-bg overflow-hidden">
-        {/* Background Effects with Scroll Reveal */}
-        <motion.div 
-          style={{ y: smoothBackgroundY, opacity: backgroundOpacity }}
-          className="absolute inset-0 z-0"
-        >
-          <BackgroundGrid />
-          <BackgroundBeams />
-          <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="hsl(var(--primary))" />
-        </motion.div>
-        
+        <BackgroundBeams />
+        <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="hsl(var(--primary))" />
         <Meteors number={13} />
         
         {/* Top Navigation with Theme Toggle */}
