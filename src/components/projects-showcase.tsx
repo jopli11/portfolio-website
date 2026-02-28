@@ -11,6 +11,7 @@ const sampleProjects = [
     description: "A comprehensive SaaS booking and operations platform for service-based businesses. Features real-time scheduling, live payments, and automated notifications.",
     tags: ["React", "Node.js", "MongoDB", "Stripe", "Docker", "GraphQL"],
     liveUrl: "https://www.qzee.app/",
+    githubUrl: "https://github.com/jopli11/qzee",
     codeDisabled: true,
     gradient: "bg-gradient-to-br from-emerald-600 to-cyan-600"
   },
@@ -26,7 +27,7 @@ const sampleProjects = [
     title: "OSRS Calculators",
     description: "A fast, mobile-first OSRS skill calculator with 100% mathematical parity. Features live Grand Exchange prices and training path optimization.",
     tags: ["Next.js", "TypeScript", "React Query", "Zustand", "Contentful"],
-    liveUrl: "https://www.osrscalculators.com/",
+    liveUrl: "https://osrscalculators.com/",
     githubUrl: "https://github.com/jopli11/osrs-skills",
     gradient: "bg-gradient-to-br from-amber-600 to-yellow-600"
   },
@@ -43,6 +44,7 @@ const sampleProjects = [
     description: "A specialized platform for runners, focusing on performance tracking and community engagement. Built for speed and scalability.",
     tags: ["Next.js", "TypeScript", "Performance Tracking", "Community", "SaaS"],
     liveUrl: "https://runite.club/",
+    githubUrl: "https://github.com/jopli11/runite",
     liveDisabled: false,
     gradient: "bg-gradient-to-br from-emerald-600 to-teal-600"
   },
@@ -74,6 +76,7 @@ const sampleProjects = [
     title: "Aidacura - Mental Health Toolkit",
     description: "AI-powered mental health platform featuring state-of-the-art chatbots, tailored resources, and mood tracking. Built with a focus on security and user empowerment.",
     tags: ["AI Chatbots", "React", "Node.js", "Security", "Mental Health Tech"],
+    githubUrl: "https://github.com/jopli11/aidacura",
     liveDisabled: true,
     codeDisabled: true,
     gradient: "bg-gradient-to-br from-cyan-500 to-blue-500"

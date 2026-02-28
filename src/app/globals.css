@@ -71,12 +71,6 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@media (min-width: 1024px) {
-    * {
-        cursor: none !important;
-    }
-}
-
 ::selection {
     background-color: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
